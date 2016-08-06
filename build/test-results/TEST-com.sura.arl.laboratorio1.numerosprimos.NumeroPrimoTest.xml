@@ -1,10 +1,10 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" tests="4" failures="0" errors="0" timestamp="2016-08-06T21:06:51" hostname="Andersson-PC" time="0.016">
+<testsuite name="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" tests="4" failures="0" errors="0" timestamp="2016-08-06T21:14:23" hostname="Andersson-PC" time="0.122">
   <properties/>
-  <testcase name="testNumeroPrimoOkCiclo" classname="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" time="0.008"/>
-  <testcase name="testNumeroPrimo1" classname="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" time="0.0"/>
-  <testcase name="testNumeroPrimo2" classname="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" time="0.001"/>
-  <testcase name="testNumeroPrimoFalse" classname="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" time="0.0"/>
+  <testcase name="testNumeroPrimoOkCiclo" classname="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" time="0.014"/>
+  <testcase name="testNumeroPrimo1" classname="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" time="0.003"/>
+  <testcase name="testNumeroPrimo2" classname="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" time="0.003"/>
+  <testcase name="testNumeroPrimoFalse" classname="com.sura.arl.laboratorio1.numerosprimos.NumeroPrimoTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

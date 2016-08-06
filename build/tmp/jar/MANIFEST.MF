@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: Numeros Primos
 Main-Class: com.sura.arl.laboratorio1.numerosprimos.Aplicacion
-Implementation-Version: 1.1470517603021
-Creation-Date: 2016-08-06 16:06:43.021
+Implementation-Version: 1.1470518056890
+Creation-Date: 2016-08-06 16:14:16.89
 Built-JDK: 1.8.0_31
 
