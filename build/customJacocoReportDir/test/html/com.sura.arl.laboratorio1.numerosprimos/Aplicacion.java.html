@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Aplicacion.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">numeros-primos-lab1</a> &gt; <a href="index.source.html" class="el_package">com.sura.arl.laboratorio1.numerosprimos</a> &gt; <span class="el_source">Aplicacion.java</span></div><h1>Aplicacion.java</h1><pre class="source lang-java linenums">package com.sura.arl.laboratorio1.numerosprimos;
+
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="nc" id="L6">public class Aplicacion {</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L9">        int desde = 1;</span>
+<span class="nc" id="L10">        int hasta = 1000;</span>
+
+<span class="nc" id="L12">        List&lt;Integer&gt; numerosPrimos = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L14" title="All 2 branches missed.">        for (int i = desde; i &lt;= hasta; i++) {</span>
+<span class="nc bnc" id="L15" title="All 2 branches missed.">            if (NumeroPrimo.esPrimo(i)) {</span>
+<span class="nc" id="L16">                numerosPrimos.add(new Integer(i));</span>
+            }
+        }
+
+<span class="nc" id="L20">        StringBuilder stringBuilder = new StringBuilder();</span>
+<span class="nc bnc" id="L21" title="All 2 branches missed.">        if (numerosPrimos.isEmpty()) {</span>
+<span class="nc" id="L22">            System.out.println(&quot;No existen números primos en el rango especificado [&quot; + desde + &quot;, &quot; + hasta + &quot;].&quot;);</span>
+        } else {
+<span class="nc" id="L24">            stringBuilder.append(&quot;La cantidad de números primos en el rango especificado [&quot;).append(desde).append(&quot;, &quot;)</span>
+<span class="nc" id="L25">                    .append(hasta).append(&quot;] son: &quot;).append(numerosPrimos.size()).append(&quot;. Dichos números son:\n&quot;);</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">            for (Integer i : numerosPrimos) {</span>
+<span class="nc" id="L27">                stringBuilder.append(i.intValue()).append(&quot;, &quot;);</span>
+<span class="nc" id="L28">            }</span>
+
+<span class="nc" id="L30">            System.out.println(stringBuilder.toString().substring(0, stringBuilder.toString().length() - 2));</span>
+        }
+<span class="nc" id="L32">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

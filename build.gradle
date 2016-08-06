@@ -1,0 +1,83 @@
+println 'Inicio ejecucion numeros-primos'
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+// Encoding con el que se compila
+[ compileJava, compileTestJava ]*.options*.encoding = 'ISO-8859-1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+sourceSets{
+	main {
+		java {
+			srcDir 'src/java/main'
+		}
+		resources {
+			srcDir 'src/java/resources'
+		}
+	}
+	test{
+		java {
+			srcDir 'src/test/java'
+		}
+		resources {
+			srcDir 'src/test/resources'
+		}
+	}
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {	
+	// ***************** PRUEBAS AUTOMATIZADAS ***************** //
+	testCompile group: 'junit', name: 'junit', version: '4.+' // Para construccion de pruebas unitarias
+    testCompile group: 'org.mockito', name:'mockito-core', version:'1.+' // Para construccion de pruebas unitarias empleando mocks y stubs
+    // ***************** FIN PRUEBAS AUTOMATIZADAS ***************** //
+}
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+test {
+	jacoco {
+		append = true
+		destinationFile = file("../numeros-primos/build/jacoco/jacoco.exec")
+	}
+}
+
+task copyRes << {
+	['src/main/java', 'src/main/resources'].each { src ->
+    	copy {
+    		from src
+   			into 'build/classes'
+   			include('**/*.txt', '**/*.xml', '**/*.properties')
+    	}
+	}
+}
+
+jar {
+    archiveName = "numeros-primos-lab1.jar"
+    manifest {
+    	def dateTime = new Date()
+		attributes(
+			"Implementation-Title": "Numeros Primos",
+			"Main-Class": "com.sura.arl.laboratorio1.numerosprimos.Aplicacion",
+			"Implementation-Version": "1." + dateTime.getTime().toString(),
+		    "Creation-Date": dateTime.toTimestamp().toString(),
+            "Built-JDK": System.getProperty('java.version')
+		)
+    }
+
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
+compileJava.dependsOn(clean)
+test.dependsOn(copyRes)
+jacocoTestReport.dependsOn(test)
+jar.dependsOn(jacocoTestReport)
